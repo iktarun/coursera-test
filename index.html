@@ -2,8 +2,20 @@
 <html>
 <head>
 	<title>First Coursera Test</title>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>	
+	<style type="text/css">body{font-size:1.3em;}</style>
 </head>
-<body>
-<h1>Coursera Test</h1>
+<body ng-app="NameCalculatorApp">
+	<h1>Name calculator Application</h1>
+	<div ng-controller="NameCalculatorController">
+		<div>
+			<input type="text" ng-model="name" ng-keyup="displayNumeric();">
+		</div>
+		<div>
+			Total number of numeric person is
+			{{ totalValue }}
+		</div>
+	</div>
 </body>
 </html>
