@@ -6,15 +6,15 @@
 	<script src="app.js"></script>	
 	<style type="text/css">body{font-size:1.3em;}</style>
 </head>
-<body ng-app="DIApp">
+<body ng-app="NameCalculatorApp">
 	<h1>Name calculator Application</h1>
-	<div ng-controller="DIController">
+	<div ng-controller="NameCalculatorController">
 		<div>
-			<input type="text" ng-model="name" ng-blur="upper();">
+			<input type="text" ng-model="name" ng-keyup="displayNumeric();">
 		</div>
 		<div>
-			Name in upper case is
-			{{ name }}
+			Total number of numeric person is
+			{{ totalValue }}
 		</div>
 	</div>
 </body>

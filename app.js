@@ -1,37 +1,15 @@
-// (function(){
-// 	'use strict';
-// 	angular.module("myFirstApp", [])
-// 	.controller('MyFirstController', function($scope){
-// 		$scope.name = "Tarun";
-// 		$scope.sayHello =  function(){
-// 			return "Hello Coursera";
-// 		};
-
-// 	});
-// })();
-
-// ************************ Name Calculator App **************** //
 (function(){
-	'use-strict';
-	angular.module("NameCalculatorApp",[]).
-		controller('NameCalculatorController', function($scope){
-		
-		$scope.name 		= "";
-		$scope.totalValue 	= 0;
+	'use strict';
+	angular.module("DIApp",[]).
+	controller("DIController",DIController);
 
-		$scope.displayNumeric = function() {
-			var totalNameValue = calculateNumericForString($scope.name);
-			$scope.totalValue  = totalNameValue; 
+	function DIController($scope,$filter){
+		$scope.name = "Tarun";
+
+		$scope.upper = function(){
+			var upperCase 	= $filter("uppercase");
+			$scope.name  	= upperCase($scope.name);
 		};
+	}
 
-		function calculateNumericForString(Mystring){
-			var totalStringValue = "";
-			for(var i=0; i< Mystring.length; i++){
-				totalStringValue += Mystring.charCodeAt(i);
-			}
-			return totalStringValue;
-		}
-	});
-})();
-
-//**************************************************** //
+}());
